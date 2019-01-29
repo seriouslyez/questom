@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Home
+{% endblock %}
+
+{% block main %}
+    <h1>
+        Answered Questions
+    </h1>
+    <script>
+        $(document).ready(function() {
+        $('#answered-table').DataTable();
+        } );
+    </script>
+    <table id="answered-table" class="table table-striped table-bordered" style="width:100%">
+        <!-- table header initialized -->
+        <thead>
+            <tr>
+              <th>Question</th>
+              <th>Answer</th>
+              <th>Answered Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- iterates over rows and gets each element via key -->
+            {% for row in rows %}
+            <tr>
+              <td>{{ row["question"] }}</td>
+              <td>{{ row["answer"] }}</td>
+              <td>{{ row["posted_date"] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

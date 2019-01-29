@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Register
+{% endblock %}
+
+{% block main %}
+    <h1>
+        Are you a student or professional?
+    </h1>
+    <form action="/register" method="post">
+        <button class="btn btn-primary btn-lg btn-block" name="userType" type="submit" value="S">Student</button>
+        <button class="btn btn-primary btn-lg btn-block" id="probutton" name="userType" type-="submit" value="P">Professional</button>
+    </form>
+{% endblock %}

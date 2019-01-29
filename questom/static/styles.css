@@ -1,0 +1,100 @@
+nav .navbar-brand
+{
+    /* size for brand */
+    font-size: xx-large;
+}
+
+main .form-control
+{
+    /* center form controls */
+    display: inline-block;
+
+    /* override Bootstrap's 100% width for form controls */
+    width: auto;
+}
+
+.error
+{
+    color: #ea433b;
+    font-weight: 700;
+}
+
+main
+{
+    /* scroll horizontally as needed */
+    overflow-x: auto;
+
+    /* center contents */
+    text-align: center;
+}
+
+main img
+{
+    /* constrain images on small screens */
+    max-width: 100%;
+}
+
+.col-form-label
+{
+    font-weight: bold;
+    font-size: 15pt;
+    margin: 0;
+}
+
+.form-group
+{
+    margin-left: 30%;
+}
+
+#new
+{
+    margin-left: 0;
+}
+
+#symptoms
+{
+    width:100%;
+}
+
+.custom-control-input
+{
+    vertical-align: bottom;
+}
+
+.background
+{
+    margin-left: auto;
+    margin-right: auto;
+    width: 200%;
+}
+
+#probutton
+{
+    margin-top: 1%;
+}
+
+img
+{
+    max-width: 50%;
+    max-height: 40%;
+}
+
+txtbox
+{
+    width:100%;
+}
+
+.form-check-inline
+{
+    margin-left: 10px;
+}
+
+.about
+{
+    text-align: center;
+}
+
+h5
+{
+    margin-bottom: 2%;
+}

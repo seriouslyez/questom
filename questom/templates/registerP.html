@@ -1,0 +1,82 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Register Professional
+{% endblock %}
+
+{% block main %}
+    <h1>
+        Professional Registration
+    </h1>
+    <form action="/registerP " method="post" onsubmit="validate(); return false;">
+        <div class="form-group row">
+            <label for"fname" class="col-sm-2 col-form-label">First Name</label>
+            <div class="col-sm-2">
+                <input type="text" class="form-control" name="first" id="fname" placeholder="First Name">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for"lname" class="col-sm-2 col-form-label">Last Name</label>
+            <div class="col-sm-2">
+                <input type="text" class="form-control" name="last" id="lname" placeholder="Last Name">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="emailfield" class="col-sm-2 col-form-label">Email</label>
+            <div class="col-sm-2">
+                <input type="email" class="form-control" name="email" id="emailfield" placeholder="Email">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="years" class="col-sm-2 col-form-label">Years of Experience</label>
+            <div class="col-sm-2">
+                <input type="number" name ="years" id="years" placeholder="years" min="0">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="user" class="col-sm-2 col-form-label">Username</label>
+            <div class="col-sm-2">
+                <input autocomplete="off" autofocus class="form-control" name="username" id="user" placeholder="Username" type="text">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="pword" class="col-sm-2 col-form-label">Password</label>
+            <div class="col-sm-2">
+                <input class="form-control" name="password" id="pword" placeholder="Password" type="password">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="confirm" class="col-sm-2 col-form-label">Confirm</label>
+            <div class="col-sm-2">
+                <input class="form-control" name="confirmation" id="confirm" placeholder="Confirm Password" type="password">
+            </div>
+        </div>
+        <div class="form-group row" id="checkboxes">
+            <label class="col-sm-2 col-form-label" for="checkboxes">Terms</label>
+            <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" name="terms" id="terms">
+                <label class="custom-control-label" for="terms">I accept the <a href="terms.txt">terms and conditions</a>.</label>
+            </div>
+        </div>
+        <div class="form-group row" id="checkboxes">
+            <label class="col-sm-2 col-form-label" for="checkboxes">Privacy</label>
+            <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" name="privacy" id="privacy">
+                <label class="custom-control-label" for="privacy">I understand the Questom <a href="privacy.txt">privacy policy</a>.</label>
+            </div>
+        </div>
+        <button class="btn btn-primary" type="submit" onclick="return validate();">Register</button>
+    </form>
+    <!-- script to check if username is available -->
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+    <script>
+        function validate()
+        {
+            let username = check().username;
+            let url = '/check?username=' + $('#user').val();
+            $.getJSON(url, function(data) {
+                alert("username is not available");
+            });
+        }
+    </script>
+{% endblock %}

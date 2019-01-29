@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Respond
+{% endblock %}
+
+{% block main %}
+    <h1>
+        Respond to:
+    </h1>
+    <h2>
+        {{ symptoms }}
+    </h2>
+    <form action="/answer" method="post">
+        <div class="form-group" id="new">
+            <input type="hidden" name="qid" value="{{ qid }}" />
+            <textarea class="form-control" rows="10" name="response" id="symptoms" placeholder="Please enter your suggestions here"></textarea>
+        </div>
+        <button class="btn btn-primary btn-lg" type="submit">Submit</button>
+    </form>
+{% endblock %}
